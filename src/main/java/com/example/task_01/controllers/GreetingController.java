@@ -11,10 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/greeting")
 public class GreetingController {
 
+    //Task 1 = return a string
+
+//    @GetMapping
+//    public String newGreeting(@RequestParam(value = "name") String name, @RequestParam(value = "timeOfDay") String timeOfDay) {
+//        Greeting greeting = new Greeting(name, timeOfDay);
+//        return "Good " + greeting.getTimeOfDay() + ", " + greeting.getName() + "!";
+//    }
+
+    //Task 2 = return a greeting object
+
     @GetMapping
-    public String newGreeting(@RequestParam(value = "name") String name, @RequestParam(value = "timeOfDay") String timeOfDay) {
-        Greeting greeting = new Greeting(name, timeOfDay);
-        return "Good " + greeting.getTimeOfDay() + ", " + greeting.getName() + "!";
+    public Greeting newGreeting(@RequestParam(value = "name") String name, @RequestParam(value = "timeOfDay") String timeOfDay) {
+        return new Greeting(name, timeOfDay);
     }
 
     @GetMapping(value = "/christmas")
